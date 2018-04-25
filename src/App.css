@@ -1,0 +1,19 @@
+html {
+  background: url(/images/background.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#main-map {
+  width: 500px;
+  height: 500px;
+  border-style: ridge;
+  border-color: #A2AEBB;
+  border-width: 7px;
+  display: inline-block;
+  position: relative;
+  left: 700px;
+  top: 60px;
+}
