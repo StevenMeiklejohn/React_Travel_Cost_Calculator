@@ -14,6 +14,75 @@ html {
   border-width: 7px;
   display: inline-block;
   position: relative;
-  left: 700px;
-  top: 60px;
+  left: 170px;
+  top: 100px;
+}
+
+#logo {
+  background-color: white;
+  display: inline-block;
+  position: relative;
+  height: 315px;
+  width: 315px;
+  border-radius: 50%;
+  left: 20px;
+
+  border-style: solid;
+  border-color: #DFE0E2;
+  border-width: 7px;
+}
+
+#logo_image {
+  display: block;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  top: 73px;
+
+}
+
+#inputs {
+  background-color: #A2AEBB;
+  width: 200px;
+  height: 500px;
+  border-style: ridge;
+  border-color: #DFE0E2;
+  border-width: 7px;
+  display: inline-block;
+  position: relative;
+  left: 100px;
+  top: -200px;
+}
+
+#distance {
+  position: relative;
+  background-color: white;
+  width: 150px;
+  height: 40px;
+  border-style: ridge;
+  border-color: #DFE0E2;
+  border-width: 7px;
+  margin-top: 20px;
+  left: 15px;
+  top: 20px;
+  text-align: center;
+}
+
+.resizedTextbox {
+  width: 150px;
+  height: 20px;
+  position: relative;
+  left: 20px;
+  top: 40px;
+  margin-bottom: 20px;
+
+}
+
+button {
+  margin: 20px;
+  font-size: 20px;
+  border-radius: 10px;
+  position: relative;
+  left: 25px;
+  top: 40px;
 }
