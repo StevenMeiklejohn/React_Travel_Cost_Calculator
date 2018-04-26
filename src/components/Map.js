@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { withGoogleMap, GoogleMap } from 'react-google-maps';
 
+// var directionsService = new google.maps.DirectionsService();
+// var directionsRenderer= new google.maps.DirectionsRenderer();
+
 
 class Map extends Component {
 
@@ -19,6 +22,15 @@ class Map extends Component {
   //   travelMode: google.maps.TravelMode.DRIVING
   //   }
   // }
+
+// addMarker(coords) {
+//   var marker = new google.maps.Marker({
+//     position: coords,
+//     map: this.googleMap,
+//     animation: google.maps.Animation.DROP
+//   });
+//   return marker;
+// }
 
 
    render() {
