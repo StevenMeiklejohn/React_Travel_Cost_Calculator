@@ -59,37 +59,37 @@ class InputBox extends Component{
     this.postAjax('https://api.postcodes.io/postcodes', convertedRequestArray, function(data){
       var parsedData = JSON.parse(data);
       console.log("parsedData", parsedData);
-      this.calcNewRoute(parsedData);
+      // this.calcNewRoute(parsedData);
     });
   }
 
 
-  calcNewRoute = function(data) {
-  console.log("data", data);
-  var newOrigin = {lat: data.result[0].result.latitude, lng: data.result[0].result.longitude};
-  var newDestination = {lat: data.result[1].result.latitude, lng: data.result[1].result.longitude};
-  console.log('calcNewRoute, newOrigin', newOrigin);
-  console.log('calcNewRoute, newDestination', newDestination);
-
-
-  var request = {
-    origin: newOrigin,
-    destination: newDestination,
-    unitSystem: google.maps.UnitSystem.METRIC,
-    travelMode: google.maps.TravelMode.DRIVING
-  }
-  directionsService.route(request, function(result, status) {
-    if (status == 'OK') {
-      console.log(result.routes[0].legs[0].distance.value);
-      directionsRenderer.setDirections(result);
-      var pTag = document.querySelector("#distance");
-      var calculatedDistance = (result.routes[0].legs[0].distance.value / 1.6) / 1000;
-      var roundedDistance = Math.round(calculatedDistance * 100) / 100
-      const distanceDisplay = document.querySelector("#distance");
-      distanceDisplay.innerText = "Calculated Distance: " + roundedDistance + " miles.";
-    }
-  });
-};
+//   calcNewRoute = function(data) {
+//   console.log("data", data);
+//   var newOrigin = {lat: data.result[0].result.latitude, lng: data.result[0].result.longitude};
+//   var newDestination = {lat: data.result[1].result.latitude, lng: data.result[1].result.longitude};
+//   console.log('calcNewRoute, newOrigin', newOrigin);
+//   console.log('calcNewRoute, newDestination', newDestination);
+//
+//
+//   var request = {
+//     origin: newOrigin,
+//     destination: newDestination,
+//     unitSystem: google.maps.UnitSystem.METRIC,
+//     travelMode: google.maps.TravelMode.DRIVING
+//   }
+//   directionsService.route(request, function(result, status) {
+//     if (status == 'OK') {
+//       console.log(result.routes[0].legs[0].distance.value);
+//       directionsRenderer.setDirections(result);
+//       var pTag = document.querySelector("#distance");
+//       var calculatedDistance = (result.routes[0].legs[0].distance.value / 1.6) / 1000;
+//       var roundedDistance = Math.round(calculatedDistance * 100) / 100
+//       const distanceDisplay = document.querySelector("#distance");
+//       distanceDisplay.innerText = "Calculated Distance: " + roundedDistance + " miles.";
+//     }
+//   });
+// };
 
 
 
