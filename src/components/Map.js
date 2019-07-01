@@ -1,55 +1,44 @@
 import React, { Component } from 'react';
-import { withGoogleMap, GoogleMap } from 'react-google-maps';
+import { withGoogleMap, GoogleMap, DirectionsRenderer, Marker } from 'react-google-maps';
 
-// var directionsService = new google.maps.DirectionsService();
-// var directionsRenderer= new google.maps.DirectionsRenderer();
 
 
 class Map extends Component {
+  constructor(props){
+    super(props)
+  }
 
-  // state = {
-  //   locations: [
-  //     { name: "New York County Supreme Court", location: {lat: 40.7143033, lng: -74.0036919} },
-  //     { name: "Queens County Supreme Court", location: {lat: 40.7046946, lng: -73.8091145} },
-  //     { name: "Kings County Supreme Court", location: {lat: 40.6940226, lng: -73.9890967} },
-  //     { name: "Richmond County Supreme Court", location: {lat: 40.6412336, lng: -74.0768597} },
-  //     { name: "Bronx Supreme Court", location: {lat: 40.8262388, lng: -73.9235238} }
-  //   ],
-  //   request: {
-  //   origin: newOrigin,
-  //   destination: newDestination,
-  //   unitSystem: google.maps.UnitSystem.METRIC,
-  //   travelMode: google.maps.TravelMode.DRIVING
-  //   }
+
+  // addMarker(coords) {
+  //   var marker = new google.maps.Marker({
+  //     position: coords,
+  //     map: this.googleMap,
+  //     animation: google.maps.Animation.DROP
+  //   });
+  //   return marker;
   // }
 
-// addMarker(coords) {
-//   var marker = new google.maps.Marker({
-//     position: coords,
-//     map: this.googleMap,
-//     animation: google.maps.Animation.DROP
-//   });
-//   return marker;
-// }
 
-
-   render() {
-   const GoogleMapExample = withGoogleMap(props => (
+  render() {
+    const GoogleMapExample = withGoogleMap(props => (
       <GoogleMap
-        defaultCenter = { {lat: 55.9533, lng: -4.5} }
-        defaultZoom = { 10 }
+      defaultCenter = { {lat: 55.9533, lng: -4.5} }
+      defaultZoom = { 10 }
       >
+      <DirectionsRenderer
+            directions={this.props.pathForRoute}
+       />
       </GoogleMap>
-   ));
+    ));
 
-   return(
+    return(
       <div id="main-map">
-        <GoogleMapExample
-          containerElement={ <div style={{ height: `500px`, width: '500px' }} /> }
-          mapElement={ <div style={{ height: `100%` }} /> }
-        />
+      <GoogleMapExample
+      containerElement={ <div style={{ height: `500px`, width: '500px' }} /> }
+      mapElement={ <div style={{ height: `100%`, width: `100%`}} /> }
+      />
       </div>
-   );
-   }
+    );
+  }
 };
 export default Map;
